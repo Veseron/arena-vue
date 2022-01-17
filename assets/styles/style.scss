@@ -1,0 +1,15 @@
+// Import libs
+@import './common/normalize.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '~/node_modules/swiper/swiper.scss';
+
+// Import base
+@import './mixins/variables.scss';
+@import './mixins/mixins.scss';
+@import './common/fonts.scss';
+@import './common/base.scss';
+@import './common/ui.scss';
+
+// Import components
+@import './components/**/*.scss';

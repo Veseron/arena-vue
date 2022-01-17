@@ -1,0 +1,91 @@
+body {
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Segoe UI';
+}
+main {
+    min-height: 710px;
+}
+.section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include desktop {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &:first-child {
+        padding-top: 40px;
+        @include desktop {
+            padding-top: 80px;
+        }
+    }
+    &:last-child {
+        padding-bottom: 40px;
+        @include desktop {
+            padding-bottom: 80px;
+        }
+    }
+    &.no-pb {
+        padding-bottom: 0;
+    }
+}
+.maps {
+    @include desktop {
+        min-height: 396px;
+    }
+}
+.video-block {
+    max-height: 565px;
+    @media screen and (max-width: 1400px) {
+        max-height: 480px;
+    }
+    @include tablet {
+        max-height: 360px;
+    }
+    @include mobile {
+        max-height: 240px;
+    }
+}
+.note-block {
+    padding: 16px;
+    border-left: 8px solid $secondary-color;
+}
+.marked-list {
+    padding-left: 0;
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 12px;
+        &::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            background: url('~assets/sprites/gen/icons.svg#list-mark') no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.row {
+    @include mobile {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+}
+.row > * {
+    @include mobile {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+.container {
+    @include mobile {
+        padding-left: 16px;
+        padding-left: 16px;
+    }
+}

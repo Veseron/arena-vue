@@ -1,0 +1,128 @@
+.services-list {
+    &__item {
+        position: relative;
+        z-index: 0;
+        img {
+            transition: ease-in-out .4s;
+        }
+        &-title {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            color: #fff;
+            padding-right: 16px;
+            @include desktop {
+                bottom: 32px;
+                left: 32px;
+            }
+        }
+        &-link {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+            color: $dark;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        & > a {
+            background: url('../../assets/images/logo-bg.png') no-repeat;
+            background-position: center;
+            background-color: $gray-medium;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            &:hover {
+                img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+        }
+        &::before {
+            content: ''; 
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 60px solid #fff;
+            border-left: 60px solid transparent;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            @include mobile {
+                border-top: 26px solid #fff;
+                border-left: 26px solid transparent;
+            }
+        }
+        &--single {
+            &::before {
+                border-top: 115px solid #fff;
+                border-left: 115px solid transparent; 
+                @include mobile {
+                    border-top: 45px solid #fff;
+                    border-left: 45px solid transparent;
+                }       
+            }            
+        }
+        &--single &-title {
+            @include mobile {
+                position: initial;
+                background-color: #fff;
+                color: $dark;
+                padding-top: 16px;
+            }
+        }
+    }
+}
+
+.services-list-empty {
+    &__item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        text-decoration: none;
+        border: 1px solid $light-gray;
+        padding: 24px;
+        position: relative;
+        min-height: 104px;
+        z-index: 0;
+        &-title {
+            color: $dark;
+            margin-bottom: 0;
+            @include desktop {
+                padding-right: 40px;
+            }
+        }
+        &::before {
+            content: ''; 
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 40px solid #fff;
+            border-left: 40px solid transparent;
+            right: -2px;
+            top: -2px;
+            z-index: 2;
+            @include mobile {
+                border-top: 24px solid #fff;
+                border-left: 24px solid transparent;
+            }
+        }
+        &::after {
+            content: ''; 
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 40px solid $light-gray;
+            border-left: 40px solid transparent;
+            right: -1.3px;
+            top: -1.3px;
+            z-index: 1;
+            @include mobile {
+                border-top: 24px solid $light-gray;
+                border-left: 24px solid transparent;
+            }
+        }
+    }
+}
